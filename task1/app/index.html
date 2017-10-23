@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <script src="./lib/angular/angular.min.js"></script>
+        <script src="./main.js"></script>        
+    </head>
+    <body>
+        <div ng-init="text='Hello world'"  ng-controller="Controller1 as alias">
+            {{ text }} <br>
+            {{ name }} <br>
+            {{ alias.name }} <br>
+            <hr>
+
+            <div ng-init="text='Hello world'"  ng-controller="Controller2 as alias2">
+                {{ name }} <br>
+                {{ alias.name }} <br>
+                {{ alias2.name }}  <br>       
+            </div>
+        
+            <div ng-init="list=['Hello', 'world', 'angular']">
+            
+                <input type="text" ng-model="searchList"/>
+                <ul>
+                    <li ng-repeat="li in list | filter:searchList">
+                        {{ li }}
+                    </li>
+                </ul>
+
+                <button ng-click="alias.addGoods(searchList)">Push</button>
+                <ul>
+                    <li ng-repeat="li in alias.goods track by $index">
+                        {{ li }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
