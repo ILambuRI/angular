@@ -1,4 +1,4 @@
-angular.module("app", []);
+angular.module('app', ['ui.router']);
 angular.module("app").controller('Controller1', Controller1);
 angular.module("app").controller('Controller2', Controller2);
 

@@ -2,7 +2,9 @@
 <html ng-app="app">
     <head>
         <script src="./lib/angular/angular.min.js"></script>
-        <script src="./main.js"></script>        
+        <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="main.js"></script>        
+        <script src="config.js"></script>        
     </head>
     <body>
         <div ng-init="text='Hello world'"  ng-controller="Controller1 as alias">
@@ -72,6 +74,11 @@
                     </tr>
                 </tbody>
             </table>
+
+                <a ui-sref="hello" ui-sref-active="active">Hello</a>
+                <a ui-sref="about" ui-sref-active="active">About</a>
+                <ui-view></ui-view>
+                
         </div>
     </body>
 </html>
